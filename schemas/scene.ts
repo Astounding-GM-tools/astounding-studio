@@ -31,8 +31,11 @@ export default defineType({
             name: 'sceneCharacters',
             title: 'Scene Characters',
             description: "The scene must have some characters! Normally, these are the Non-Player Characters (NPCs) or enemies (monsters) that the players can interact with in the scene.",
-            type: 'reference',
-            to: [{type: 'character'}]
+            type: 'array',
+            of: [{
+                type: 'reference',
+                to: [{ type: 'character' }]
+            }],
         })
     ]
 });

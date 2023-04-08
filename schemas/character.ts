@@ -6,19 +6,51 @@ export default defineType({
     type: 'document',
     fields: [
         defineField({
-            name: 'title',
-            title: 'Title',
+            name: 'name',
+            title: 'Name',
             type: 'string',
         }),
         defineField({
+            name: "slug",
+            title: "Slug",
+            type: "slug",
+            options: {
+                source: "name",
+                maxLength: 96,
+            },
+        }),
+        defineField({
             name: 'description',
-            title: 'Description',
+            title: 'Description, background and motivation',
             type: 'text',
         }),
         defineField({
             name: 'image',
-            title: 'Image',
-            type: 'image',
-        })
+            title: 'Image URL',
+            type: 'string',
+        }),
+        defineField({
+            name: 'stats',
+            title: 'Stats',
+            type: 'string'
+        }),
+        defineField({
+            name: 'mannerisms',
+            title: 'Mannerisms',
+            type: 'array',
+            of: [{ type: 'string' }]
+        }),
+        defineField({
+            name: 'traits',
+            title: 'Traits',
+            type: 'array',
+            of: [{ type: 'string' }]
+        }),
+        defineField({
+            name: 'items',
+            title: 'Items',
+            type: 'array',
+            of: [{ type: 'string' }]
+        }),
     ]
 });
