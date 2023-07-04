@@ -20,14 +20,22 @@ export default defineType({
             },
         }),
         defineField({
+            name: 'occupation',
+            title: 'Occupation',
+            type: 'string',
+        }),
+        defineField({
             name: 'description',
             title: 'Description, background and motivation',
             type: 'text',
         }),
         defineField({
-            name: 'image',
-            title: 'Image URL',
-            type: 'string',
+            name: 'portrait',
+            title: 'Portrait',
+            type: 'image',
+            options: {
+                hotspot: true,
+            },
         }),
         defineField({
             name: 'stats',
